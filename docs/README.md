@@ -1,21 +1,6 @@
-# [ WORK IN PROGRESS ] Admin Example
+# [ WORK IN PROGRESS ] Admin Baselinker
 
-An example admin app that adds a menu button to the admin sidebar.
-
-# PREVIEW NOTICE :construction:
-
-We're working on the **admin builder**, which will allow you to define two files: `admin/routes.json` file with everything you need to create an admin interface (routes paths and components), and `admin/navigation.json` which alows your admin app to insert itself in the sidebar navigation. This is a temporary example!
-
-### How to develop admins
-
-1. Admins always declare routes in `/admin/app/<route>`
-
-2. Declare the `admin` builder in your manifest
-
-3. When installed, the user navigates to `/admin/<route>`, but your app runs in an iframe that points to `/admin/app/<route>`.
-
-4. You can develop directly in the `/admin/app` route for convenience, but don't forget to test it inside the iframe. :)
-
+This admin app adds a menu button called `Baselinker` to the admin sidebar. The button is located under `ACCOUNT SETTINGS` and its scope is to take care of the Baselinker Integration.
 
 ### Quickstart
 
@@ -25,4 +10,4 @@ We're working on the **admin builder**, which will allow you to define two files
 
 3. `vtex link`
 
-4. Navigate to `workspace--account.myvtex.com/admin/app/example`
+4. Navigate to `<your_workspace>--mbntech.myvtex.com/admin/app/baselinker`

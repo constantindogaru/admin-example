@@ -1,5 +1,4 @@
 {
-  "admin-example.navigation.label": "Example admin",
-  "admin-example.hello-world": "",
-  "appframe.navigation.example": ""
+  "admin-baselinker.navigation.label": "",
+  "admin-baselinker.hello-world": ""
 }
