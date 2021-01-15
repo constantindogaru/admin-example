@@ -1,22 +1,29 @@
-import React, { FC } from 'react'
+import React, { FC, useState } from 'react'
 import { FormattedMessage } from 'react-intl'
-import { Layout, PageBlock, PageHeader } from 'vtex.styleguide'
-
-import UsersTable from './UsersTable'
+import { Layout, PageBlock, Button, Input } from 'vtex.styleguide'
 
 import './styles.global.css'
 
 const AdminBaselinker: FC = () => {
+  const [token, setToken] = useState('')
   return (
-    <Layout
-      pageHeader={
-        <PageHeader
-          title={<FormattedMessage id="admin-baselinker.hello-world" />}
+    <Layout>
+      <PageBlock
+        title={<FormattedMessage id="admin-baselinker.configure.title"/>}
+        subtitle={<FormattedMessage id="admin-baselinker.configure.subtitle"/>}
+        variation="full"
+      >
+        <Input
+          placeholder="API key"
+          value={token}
+          onChange={(e: any) => setToken(e.target.value)}
         />
-      }
-    >
-      <PageBlock variation="full">
-        <UsersTable />
+        <Button
+          onClick={() => {
+          }}
+        >
+          <FormattedMessage id="admin-baselinker.button.next"/>
+        </Button>
       </PageBlock>
     </Layout>
   )
