@@ -1,7 +1,7 @@
 {
   "admin-baselinker.navigation.label": "Baselinker",
   "admin-baselinker.hello-world": "Baselinker Admin",
-  "admin-baselinker.configure.title": "Configure API key",
-  "admin-baselinker.configure.subtitle": "Please insert your API key",
+  "admin-baselinker.configure.title": "API Key Configuration",
+  "admin-baselinker.configure.subtitle": "Please insert your API Key",
   "admin-baselinker.button.next": "NEXT"
 }

@@ -1,30 +1,44 @@
 import React, { FC, useState } from 'react'
-import { FormattedMessage } from 'react-intl'
-import { Layout, PageBlock, Button, Input } from 'vtex.styleguide'
+import { Layout } from 'vtex.styleguide'
+import { StepCounterControl } from './typings/typings'
 
 import './styles.global.css'
+import ApiKeyConfig from './ApiKeyConfig'
+import StorageListing from './StorageListing'
+import SaveStorage from './SaveStorage'
+
+const TOTAL_STEPS = 3
 
 const AdminBaselinker: FC = () => {
-  const [token, setToken] = useState('')
+  const [step, setStep] = useState(1)
+
+  const next = () => setStep(step + 1)
+  const back = () => setStep(step - 1)
+
+  const stepCounterControl: StepCounterControl = {
+    back,
+    current: step,
+    next,
+    total: TOTAL_STEPS,
+  }
+
   return (
     <Layout>
-      <PageBlock
-        title={<FormattedMessage id="admin-baselinker.configure.title"/>}
-        subtitle={<FormattedMessage id="admin-baselinker.configure.subtitle"/>}
-        variation="full"
-      >
-        <Input
-          placeholder="API key"
-          value={token}
-          onChange={(e: any) => setToken(e.target.value)}
+      {step === 1 && (
+        <ApiKeyConfig
+          stepCounterControl={stepCounterControl}
         />
-        <Button
-          onClick={() => {
-          }}
-        >
-          <FormattedMessage id="admin-baselinker.button.next"/>
-        </Button>
-      </PageBlock>
+      )}
+      {step === 2 && (
+        <StorageListing
+          stepCounterControl={stepCounterControl}
+        />
+      )}
+      {step === 3 && (
+        <SaveStorage
+          stepCounterControl={stepCounterControl}
+        />
+      )}
     </Layout>
   )
 }
