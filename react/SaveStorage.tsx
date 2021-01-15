@@ -1,6 +1,6 @@
-import React, { FC, useState } from 'react'
+import React, { FC } from 'react'
 import { FormattedMessage } from 'react-intl'
-import { PageBlock, Button, Input } from 'vtex.styleguide'
+import { PageBlock } from 'vtex.styleguide'
 import { StepCounterControl } from './typings/typings'
 
 import './styles.global.css'
@@ -13,18 +13,13 @@ interface Props {
 const SaveStorage: FC<Props> = ({
   stepCounterControl
 }) => {
-  const [token, setToken] = useState('')
   return (
     <PageBlock
       title={<FormattedMessage id="admin-baselinker.configure.title"/>}
       subtitle={<FormattedMessage id="admin-baselinker.configure.subtitle"/>}
       variation="full"
     >
-      <Input
-        placeholder="API Key"
-        value={token}
-        onChange={(e: any) => setToken(e.target.value)}
-      />
+      <h3>This is where we should save the storage that was chosen in the previous step in Master Data and display to the user that everything was successful.</h3>
       <StepCounter {...stepCounterControl} />
     </PageBlock>
   )
