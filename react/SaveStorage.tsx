@@ -15,8 +15,8 @@ const SaveStorage: FC<Props> = ({
 }) => {
   return (
     <PageBlock
-      title={<FormattedMessage id="admin-baselinker.configure.title"/>}
-      subtitle={<FormattedMessage id="admin-baselinker.configure.subtitle"/>}
+      title="Success"
+      subtitle="Your option was successfully saved"
       variation="full"
     >
       <h3>This is where we should save the storage that was chosen in the previous step in Master Data and display to the user that everything was successful.</h3>
